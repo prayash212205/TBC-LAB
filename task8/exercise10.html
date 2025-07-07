@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exercise9</title>
+    </head>
+    <body>
+        Length: <input type="number" id="length" oninput="calculateArea()"><br>
+        Breadth: <input type="number" id="breadth" oninput="calculateArea()"><br>
+       <p>Area: <span id="result">0</span></p>
+
+        <script>
+          function calculateArea() {
+          const length = document.getElementById("length").value || 0;
+          const breadth = document.getElementById("breadth").value || 0;
+          document.getElementById("result").textContent = length * breadth;
+          }
+        </script>
+    </body>
+</html>

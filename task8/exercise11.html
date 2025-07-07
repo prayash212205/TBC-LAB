@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+        }
+        #controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        #text1 {
+            padding: 8px;
+            flex-grow: 1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #979d97;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #5eaada;
+        }
+        #Result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Array Operations</h2>
+
+<div id="controls">
+    <input type="text" id="text1" placeholder="Enter item">
+    <button onclick="add_item_to_array()">Add</button>
+    <button onclick="display_array()">Display</button>
+</div>
+
+<div id="Result"></div>
+
+<script>
+    let array = [];
+    let x = 0;
+
+    function add_item_to_array() {
+        const value = document.getElementById("text1").value.trim();
+        if (value) {
+            array[x] = value;
+            x++;
+            document.getElementById("text1").value = "";
+            document.getElementById("text1").focus();
+        }
+    }
+
+    function display_array() {
+        let output = "";
+        if (array.length === 0) {
+            output = "Array is empty";
+        } else {
+            output = "<h3>Array Contents:</h3>";
+            for (let y = 0; y < array.length; y++) {
+                output += `Element ${y} = ${array[y]}<br>`;
+            }
+        }
+        document.getElementById("Result").innerHTML = output;
+    }
+</script>
+
+</body>
+</html>

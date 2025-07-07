@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>exercise7</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+            width: 400px;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0b7bab;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #bddded;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>Image</th>
+        </tr>
+        <script>
+            for(let i = 1; i <= 4; i++) {
+                document.write(`
+                    <tr>
+                        <td>${i}</td>
+                        <td>Name ${i}</td>
+                        <td>${i}.jpg</td>
+                    </tr>
+                `);
+            }
+        </script>
+    </table>
+</body>
+</html>
